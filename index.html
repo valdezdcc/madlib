@@ -1,104 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="MadLibs.css">
     <title>Mad Libs</title>
 </head>
 <body>
-    <div class="container">
-        <header id="intro" class="center">
             <h1 >Spongebob Madlib</h1>
         </header>
 
         <main>
-            <!-- Main MadLibs Form Input Area -->
-            <form id="madlibs-form" name="madlibs-form" onsubmit="submitMadLibs(event)">
-                <section id="madlibs-inputs">
+            <form id="myForm" name="myForm">
+               
                     <div class="input-group">
-                        <label for="number">fruit</label>
-                        <input type="text" id="number" name="number">
+                        <label for="fruit">fruit</label>
+                        <input type="text" id="fruit" name="fruit">
                     </div>
-                    
+                    <br>
                     <div class="input-group">
-                        <label for="adjective_1">noun</label>
-                        <input type="text" id="adjective_1" name="adjective_1">
+                        <label for="noun">noun</label>
+                        <input type="text" id="noun" name="noun">
                     </div>
-        
+                    <br>
                     <div class="input-group">
-                        <label for="noun_1">name</label>
-                        <input type="text" id="noun_1" name="noun_1">
+                        <label for="name">name</label>
+                        <input type="text" id="name" name="name">
                     </div>
-        
+                    <br>
                     <div class="input-group">
-                        <label for="noun_2">adjective</label>
-                        <input type="text" id="noun_2" name="noun_2">
+                        <label for="adjective">adjective</label>
+                        <input type="text" id="adjective" name="adjective">
                     </div>
-                    
+                    <br> 
                     <div class="input-group">
-                        <label for="noun_3">color</label>
-                        <input type="text" id="noun_3" name="noun_3">
+                        <label for="color">color</label>
+                        <input type="text" id="color" name="color">
                     </div>
-        
+                    <br>
                     <div class="input-group">
                         <label for="adjective_2">adjective</label>
                         <input type="text" id="adjective_2" name="adjective_2">
                     </div>
-        
+         <br>
                     <div class="input-group">
-                        <label for="noun_4">adjective</label>
-                        <input type="text" id="noun_4" name="noun_4">
+                        <label for="adjective_3">adjective</label>
+                        <input type="text" id="adjective_3" name="adjective_3">
                     </div>
-        
+        <br>
                     <div class="input-group">
-                        <label for="sport_1">noun</label>
-                        <input type="text" id="sport_1" name="sport_1">
+                        <label for="noun">noun</label>
+                        <input type="text" id="noun" name="noun">
                     </div>
-        
+        <br>
                     <div class="input-group">
-                        <label for="sport_2">verb</label>
-                        <input type="text" id="sport_2" name="sport_2">
+                        <label for="verb">verb</label>
+                        <input type="text" id="verb" name="verb">
                     </div>
-        
+       <br>
                     <div class="input-group">
-                        <label for="sport_3">verb</label>
-                        <input type="text" id="sport_3" name="sport_3">
+                        <label for="verb_2">verb</label>
+                        <input type="text" id="verb_2" name="verb_2">
                     </div>
-        
+        <br>
                     <div class="input-group">
-                        <label for="beverage">noun</label>
-                        <input type="text" id="beverage" name="beverage">
+                        <label for="noun_2">noun</label>
+                        <input type="text" id="noun_2" name="noun_2">
                     </div>
-
+                    <br>
                     <div class="input-group">
-                        <label for="beverage_1">verb</label>
-                        <input type="text" id="beverage_1" name="beverage_1">
+                        <label for="verb_3">verb</label>
+                        <input type="text" id="verb_3" name="verb_3">
                     </div>
-        
+        <br>
                     <div class="input-group">
-                        <label for="food">animal</label>
-                        <input type="text" id="food" name="food">
+                        <label for="animal">animal</label>
+                        <input type="text" id="animal" name="animal">
                     </div>
-                </section>
-                
-                <section id="madlibs-submit">
-                    <button type="submit">
-                        Generate
-                    </button>
-                </section>
+                    <input type="submit" value="submit">
             </form>
-
-            <section id="completed-story" class="hide"></section>
+            <br>
+            <div id="completedstory" ></div> <br>
         </main>
-    </div>
-    
-    
-    <!-- JS Script inclusion -->
-    <script src="MadLibs.js"></script>
+    <script>
+        var form= document.getElementById("myForm");
+        form.addEventListener('submit', function(event) {
+			event.preventDefault();
+    var fruit = document.getElementById("fruit").value;
+    var noun = document.getElementById("noun").value;
+    var name = document.getElementById("name").value;
+    var adjective = document.getElementById("adjective").value;
+    var color = document.getElementById("color").value;
+    var adjective_2 = document.getElementById("adjective_2").value;
+    var adjective_3 = document.getElementById("adjective_3").value;
+    var noun = document.getElementById("noun").value;
+    var verb = document.getElementById("verb").value;
+    var verb_2 = document.getElementById("verb_2").value;
+    var noun_2 = document.getElementById("noun_2").value;
+    var verb_3 = document.getElementById("verb_3").value;
+    var animal = document.getElementById("animal").value;
+        var formContents = document.getElementById("completedstory");
+        formContents.innerHTML =  "<b>Captain:</b> Ohhhhh... who lives in a " + fruit + " under the " + noun + "? <br> <b>Kids:</b> " + name + " Squarepants!<br> <b>Captain:</b> " + adjective + " and " + color + "and " + adjective_2 + " is he!<br><b>Kids:</b> " + adjective_3 + " Squarepants!<br><br><b>Captain:</b> If " + noun + verb + " be somthing you " + verb_2 + "...<br><br><b>Kids:</b>" + noun_2 + "  Squarepants!<br><br><b>Captain:</b> Then" + verb_3 + " on the " + noun_2 + " and " + verb_3 + " like a " + animal + ". <br><br><b>Kids:</b> " + name + " Squarepants!<br><br><b>Captain:</b> Ready?<br><br><b>Everyone: " + name + "</b> Squarepants! " + name + " Squarepants! " + name + " Squarepants!<br><br><b>Captain:</b> " + name + "</b>... Squarepants! ahhhahhhahahaaaa!!";
+        
+        });
+        						
+    </script>
 </body>
 </html>
